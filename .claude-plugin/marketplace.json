@@ -1,0 +1,20 @@
+{
+  "name": "socra",
+  "owner": {
+    "name": "Socra",
+    "email": "support@socra.com"
+  },
+  "description": "Official plugins for Socra products and services.",
+  "plugins": [
+    {
+      "name": "cortex",
+      "source": "./providers/claude/cortex",
+      "description": "Give Claude Code access to your organization's knowledge in Socra Cortex.",
+      "version": "0.2.4",
+      "author": {
+        "name": "Socra"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
