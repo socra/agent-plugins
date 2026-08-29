@@ -1,0 +1,22 @@
+{
+  "name": "socra",
+  "owner": {
+    "name": "Socra",
+    "email": "support@socra.com"
+  },
+  "metadata": {
+    "description": "Official plugins for Socra products and services."
+  },
+  "plugins": [
+    {
+      "name": "cortex",
+      "source": "./providers/cursor/cortex",
+      "description": "Give Cursor access to your organization's knowledge in Socra Cortex.",
+      "version": "0.2.4",
+      "author": {
+        "name": "Socra"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

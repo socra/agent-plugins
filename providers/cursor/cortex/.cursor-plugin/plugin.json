@@ -1,0 +1,17 @@
+{
+  "name": "cortex",
+  "version": "0.2.4",
+  "description": "Give Cursor access to your organization's knowledge in Socra Cortex.",
+  "author": {
+    "name": "Socra"
+  },
+  "homepage": "https://cortex.socra.com",
+  "repository": "https://github.com/socra/agent-plugins",
+  "license": "UNLICENSED",
+  "keywords": [
+    "socra",
+    "cortex",
+    "knowledge",
+    "context"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "cat \"${CURSOR_PLUGIN_ROOT}/hooks/session-start.json\"",
+        "timeout": 5
+      }
+    ]
+  }
+}
