@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat ./hooks/session-start.md",
+            "additionalContextLimit": 2000,
+            "timeout": 5,
+            "statusMessage": "Loading Socra Cortex guidance"
+          }
+        ]
+      }
+    ]
+  }
+}

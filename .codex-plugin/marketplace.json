@@ -1,0 +1,27 @@
+{
+  "name": "socra",
+  "owner": {
+    "name": "Socra",
+    "email": "support@socra.com"
+  },
+  "interface": {
+    "displayName": "Socra"
+  },
+  "plugins": [
+    {
+      "name": "cortex",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/socra/agent-plugins.git",
+        "path": "providers/codex/cortex",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
+

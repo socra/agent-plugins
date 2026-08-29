@@ -1,0 +1,33 @@
+{
+  "name": "cortex",
+  "version": "0.2.0",
+  "description": "Give Codex access to your organization's knowledge in Socra Cortex.",
+  "author": {
+    "name": "Socra",
+    "url": "https://socra.com"
+  },
+  "homepage": "https://cortex.socra.com",
+  "repository": "https://github.com/socra/agent-plugins",
+  "keywords": [
+    "socra",
+    "cortex",
+    "knowledge",
+    "context"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Socra Cortex",
+    "shortDescription": "Load your organization's knowledge before you work.",
+    "longDescription": "Socra Cortex gives Codex governed, reusable organizational knowledge so it can understand the intent behind a system before acting.",
+    "developerName": "Socra",
+    "category": "Productivity",
+    "capabilities": [
+      "Organizational knowledge",
+      "Work coordination"
+    ],
+    "websiteURL": "https://cortex.socra.com",
+    "defaultPrompt": [
+      "Use Cortex knowledge to help with this task"
+    ]
+  }
+}
