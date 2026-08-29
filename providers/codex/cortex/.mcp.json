@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "cortex": {
-      "type": "http",
-      "url": "https://cortex.socra.cloud/mcp",
-      "oauth_resource": "https://cortex.socra.cloud/mcp"
-    }
-  }
-}
