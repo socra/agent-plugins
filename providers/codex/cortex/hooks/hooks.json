@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cat \"${CODEX_PLUGIN_ROOT}/hooks/session-start.md\"",
+            "command": "cat \"${PLUGIN_ROOT}/hooks/session-start.md\"",
             "additionalContextLimit": 2000,
             "timeout": 5,
             "statusMessage": "Loading Socra Cortex guidance"
