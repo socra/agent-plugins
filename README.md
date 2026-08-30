@@ -38,17 +38,6 @@ Restart Cursor or run **Developer: Reload Window**, then confirm Cortex under **
 
 Plugin path: `providers/cursor/cortex`
 
-### Gemini CLI
-
-Gemini CLI cannot install a plugin from a subdirectory of a remote repository, so install the provider directory from a local clone:
-
-```sh
-gh repo clone socra/agent-plugins
-gemini extensions install ./agent-plugins/providers/gemini/cortex --consent
-```
-
-Plugin path: `providers/gemini/cortex`
-
 ### GitHub Copilot CLI
 
 ```sh
