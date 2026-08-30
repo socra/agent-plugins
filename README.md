@@ -29,7 +29,7 @@ Plugin path: `providers/claude/cortex`
 Until the Socra marketplace is connected in Cursor, clone this repository and link the provider directory for local installation:
 
 ```sh
-git clone git@github.com:socra/agent-plugins.git
+gh repo clone socra/agent-plugins
 mkdir -p ~/.cursor/plugins/local
 ln -s "$(pwd)/agent-plugins/providers/cursor/cortex" ~/.cursor/plugins/local/cortex
 ```
@@ -43,7 +43,7 @@ Plugin path: `providers/cursor/cortex`
 Gemini CLI cannot install a plugin from a subdirectory of a remote repository, so install the provider directory from a local clone:
 
 ```sh
-git clone git@github.com:socra/agent-plugins.git
+gh repo clone socra/agent-plugins
 gemini extensions install ./agent-plugins/providers/gemini/cortex --consent
 ```
 
