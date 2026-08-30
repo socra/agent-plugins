@@ -1,0 +1,16 @@
+{
+  "name": "cortex",
+  "version": "0.3.0",
+  "description": "Give Gemini CLI access to your organization's knowledge in Socra Cortex.",
+  "mcpServers": {
+    "cortex": {
+      "type": "http",
+      "url": "https://cortex.socra.cloud/mcp",
+      "oauth": {
+        "enabled": true,
+        "clientId": "client_01m19wfmr3d9xvamg68hf8qp7k",
+        "redirectUri": "http://localhost:49173/oauth/callback"
+      }
+    }
+  }
+}

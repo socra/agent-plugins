@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "Load Socra Cortex guidance",
+            "command": "node \"${extensionPath}/hooks/session-start.js\"",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}

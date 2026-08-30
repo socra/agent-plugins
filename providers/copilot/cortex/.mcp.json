@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "cortex": {
+      "type": "http",
+      "url": "https://cortex.socra.cloud/mcp",
+      "tools": ["*"],
+      "oauthClientId": "client_01m19wk8w48zwc522v5qxp31w6",
+      "oauthPublicClient": true,
+      "auth": {
+        "redirectPort": 49174
+      },
+      "deferTools": "never"
+    }
+  }
+}

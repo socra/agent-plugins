@@ -1,0 +1,22 @@
+{
+  "name": "socra",
+  "owner": {
+    "name": "Socra",
+    "email": "support@socra.com"
+  },
+  "metadata": {
+    "description": "Official plugins for Socra products and services."
+  },
+  "plugins": [
+    {
+      "name": "cortex",
+      "source": "./providers/copilot/cortex",
+      "description": "Give GitHub Copilot CLI access to your organization's knowledge in Socra Cortex.",
+      "version": "0.3.0",
+      "author": {
+        "name": "Socra"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

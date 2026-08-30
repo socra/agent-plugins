@@ -7,6 +7,8 @@ source_file="${repo_root}/shared/cortex/session-start.md"
 targets=(
   "${repo_root}/providers/codex/cortex/hooks/session-start.md"
   "${repo_root}/providers/claude/cortex/hooks/session-start.md"
+  "${repo_root}/providers/gemini/cortex/hooks/session-start.md"
+  "${repo_root}/providers/copilot/cortex/hooks/session-start.md"
 )
 cursor_target="${repo_root}/providers/cursor/cortex/hooks/session-start.json"
 
