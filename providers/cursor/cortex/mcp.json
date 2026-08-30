@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "cortex": {
+      "type": "http",
+      "url": "https://cortex.socra.cloud/mcp",
+      "auth": {
+        "CLIENT_ID": "client_01m19tqpdevfmbe7jvetgmwkyc"
+      }
+    }
+  }
+}
