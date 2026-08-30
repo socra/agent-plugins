@@ -1,6 +1,6 @@
 {
   "name": "cortex",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Give Codex access to your organization's knowledge in Socra Cortex.",
   "author": {
     "name": "Socra",
@@ -14,6 +14,7 @@
     "knowledge",
     "context"
   ],
+  "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Socra Cortex",
     "shortDescription": "Load your organization's knowledge before you work.",
@@ -21,7 +22,8 @@
     "developerName": "Socra",
     "category": "Productivity",
     "capabilities": [
-      "Session guidance"
+      "Session guidance",
+      "Cortex MCP tools"
     ],
     "websiteURL": "https://cortex.socra.com",
     "defaultPrompt": [
