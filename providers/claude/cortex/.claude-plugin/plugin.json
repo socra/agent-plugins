@@ -1,6 +1,6 @@
 {
   "name": "cortex",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Give Claude Code access to your organization's knowledge in Socra Cortex.",
   "author": {
     "name": "Socra",
@@ -14,5 +14,6 @@
     "cortex",
     "knowledge",
     "context"
-  ]
+  ],
+  "mcpServers": "./.mcp.json"
 }
