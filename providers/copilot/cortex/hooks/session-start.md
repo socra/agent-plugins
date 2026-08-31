@@ -14,4 +14,4 @@ When a task comes from a Cortex Issue, read the Issue and flash its owning Modul
 
 When creating an Issue, attach it to the narrowest Module that fully governs the work so its Flash provides the most specific knowledge needed to do it.
 
-Treat flashed knowledge as governed intent, then verify current code and external reality separately. When work reveals durable knowledge that could improve future decisions, find its narrowest Module and propose the exact change. Apply no knowledge change without its owner's explicit approval.
+Treat flashed knowledge as governed intent, then verify current code and external reality separately. When work reveals durable new knowledge that could improve future decisions, find its narrowest Module and propose the exact change/update. Apply no knowledge change without its owner's explicit approval.
