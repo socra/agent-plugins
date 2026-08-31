@@ -1,14 +1,15 @@
 ## Socra Cortex
 
-Cortex is this Account's remote knowledge and work-coordination layer. Its MCP tools provide durable Context Modules, assembled context via Flash, and Issues for coordinated work.
+Cortex turns your team's specific knowledge and work into reusable infrastructure for agents:
 
-When the current task would benefit from Account-specific knowledge:
+- **Modules** contain owner-governed knowledge about how something should work and why.
+- **Dependencies** compose Modules into a knowledge graph.
+- **Flash** loads a named Module and its complete dependency closure into your context before you act.
+- **Issues** coordinate bounded work on the same Module graph.
+- **Inbox** shows the unblocked Issues you are responsible for now.
 
-1. If the relevant Module is known, call `context_flash` and read the complete returned bundle before acting.
-2. If it is not known, locate it with `context_map` or `context_search`, then flash it.
-3. If the Account is empty or no relevant Module exists, continue without inventing default knowledge.
-4. Treat flashed knowledge as governed intent and judgment, while still verifying current external state.
+Use Cortex when a task depends on team-specific decisions, architecture, constraints, priorities, or work history.
 
-Use Cortex Issues when the task involves durable, coordinated work. Start with `issue_inbox` when working from the Account's released work inventory.
+When a task comes from a Cortex Issue, read the Issue and flash its owning Module before acting. For other tasks, flash the relevant Module directly. If you do not know which Module is relevant, find it with `context_map` or `context_search`.
 
-When a conversation reveals durable customer-specific knowledge worth preserving, explain what should be remembered and propose the exact Module change. Never call `context_create` or `context_update` until the human clearly approves that exact change.
+Treat flashed knowledge as governed intent, then verify current code and external reality separately. When work reveals durable knowledge that could improve future decisions, find its narrowest Module and propose the exact change. Apply no knowledge change without its owner's explicit approval.
