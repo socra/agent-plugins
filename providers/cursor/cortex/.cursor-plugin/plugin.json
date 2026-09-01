@@ -1,6 +1,6 @@
 {
   "name": "cortex",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Give Cursor access to your organization's knowledge in Socra Cortex.",
   "author": {
     "name": "Socra"
@@ -13,6 +13,5 @@
     "cortex",
     "knowledge",
     "context"
-  ],
-  "mcpServers": "./mcp.json"
+  ]
 }
