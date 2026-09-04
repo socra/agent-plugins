@@ -4,6 +4,7 @@ set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 source_file="${repo_root}/shared/cortex/session-start.md"
+max_context_bytes=2000
 targets=(
   "${repo_root}/providers/codex/cortex/hooks/session-start.md"
   "${repo_root}/providers/claude/cortex/hooks/session-start.md"
@@ -12,6 +13,15 @@ targets=(
 cursor_target="${repo_root}/providers/cursor/cortex/hooks/session-start.json"
 codex_hooks="${repo_root}/providers/codex/cortex/hooks/hooks.json"
 codex_trust="${repo_root}/providers/codex/cortex/hooks/trust.json"
+
+validate_source_size() {
+  local source_bytes
+  source_bytes="$(wc -c < "${source_file}" | tr -d ' ')"
+  if (( source_bytes > max_context_bytes )); then
+    echo "Session-start context is ${source_bytes} bytes; maximum is ${max_context_bytes}: ${source_file}" >&2
+    exit 1
+  fi
+}
 
 sync_codex_trust() {
   local mode="$1"
@@ -84,6 +94,8 @@ if (mode === 'check') {
 }
 NODE
 }
+
+validate_source_size
 
 if [[ "${1:-}" == "--check" ]]; then
   for target in "${targets[@]}"; do

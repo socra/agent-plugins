@@ -49,7 +49,7 @@ Plugin path: `providers/copilot/cortex`
 
 ## Development
 
-The canonical Cortex session-start context lives at `shared/cortex/session-start.md`. After editing it, synchronize every provider copy and validate the result:
+The canonical Cortex session-start context lives at `shared/cortex/session-start.md` and must stay within its 2,000-byte provider limit. After editing it, synchronize every provider copy and validate the result:
 
 ```sh
 ./scripts/sync-cortex-session-start.sh
