@@ -1,6 +1,4 @@
-## Socra Cortex
-
-Cortex turns your team's specific knowledge and work into reusable infrastructure for agents:
+Cortex augments any agent with the owner-governed knowledge it needs before it acts and coordinates work through Issues on the Module Semantic DAG (SemDAG), where Modules are the single source of truth upstream of code and agents create and update them through owner-approved changes so people never have to repeat what they know.
 
 - **Modules** contain owner-governed knowledge about how something should work and why.
 - **Dependencies** compose Modules into a knowledge graph.
@@ -8,10 +6,8 @@ Cortex turns your team's specific knowledge and work into reusable infrastructur
 - **Issues** coordinate bounded work that reconciles Modules (what should be) with repositories (what is implemented).
 - **Inbox** shows the unblocked Issues you are responsible for now.
 
-Use Cortex when a task depends on team-specific knowledge or decisions, including architecture, constraints, priorities, or work history.
+Use Cortex to:
 
-When a task comes from a Cortex Issue, read the Issue and flash its owning Module before acting. For other tasks, flash the relevant Module directly. If you do not know which Module is relevant, find it with `context_map` or `context_search`.
-
-When creating an Issue, attach it to the narrowest Module that fully governs the work so its Flash provides the most specific knowledge needed to do it.
-
-Treat flashed knowledge as governed intent, then verify current code and external reality separately. When work reveals durable new knowledge that could improve future decisions, find its narrowest Module and propose the exact change/update. Apply no knowledge change without its owner's explicit approval.
+- Flash the narrowest relevant Module before acting on conversation or work involving specific knowledge or decisions, including architecture, constraints, priorities, or work history. Find it with `context_map` or `context_search`. Treat flashed knowledge as governed intent; verify code and external reality separately.
+- Coordinate work through Issues and Inbox. Read each Issue and flash its owning Module before acting. Attach new Issues to the narrowest Module that fully governs the work.
+- Refine the SemDAG when conversation or work reveals specific knowledge that could improve future decisions, conflicts with a Module, reveals outdated or incomplete knowledge, or requires a missing Module or Dependency. Flash the narrowest relevant Module first. If it already makes the same decision, do not restate it. If not, propose the exact update to its owning Module, or a new Module with Dependencies if none owns it. Keep durable should-state, not incidents, status, implementation, migrations, or cleanup. Request explicit owner approval under `# Module Change Request`, with the exact change and before and after for updates. Apply only after approval, then flash the changed Module again.
