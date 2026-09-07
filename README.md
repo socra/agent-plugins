@@ -55,3 +55,5 @@ The canonical Cortex session-start context lives at `shared/cortex/session-start
 ./scripts/sync-cortex-session-start.sh
 ./scripts/sync-cortex-session-start.sh --check
 ```
+
+When changing session-start guidance, bump each affected provider plugin version and its marketplace version (where present) so installed plugin caches receive the update.

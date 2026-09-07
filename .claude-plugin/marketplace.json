@@ -10,7 +10,7 @@
       "name": "cortex",
       "source": "./providers/claude/cortex",
       "description": "Give Claude Code access to your organization's knowledge in Socra Cortex.",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "author": {
         "name": "Socra"
       },
