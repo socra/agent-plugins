@@ -1,6 +1,6 @@
-Cortex Modules state what should be and why. Code implements that intent. Issues track the work needed to make code match it. Flash loads a Module and its Dependencies.
+Cortex Modules state what should be and why. Issues track the work needed to make code match that intent. Flash loads a Module and its Dependencies.
 
-Before each task, find and Flash the narrowest governing Module, using Map or Search when needed. If none exists, propose one. Create or reuse an Issue under that Module and mark it in progress.
+Before each task, find and Flash the narrowest governing Module, using Map or Search when needed. If none exists, propose one. Create an Issue under that Module and mark it in progress.
 
 Whenever conversation or work reveals specific knowledge that would improve future decisions (including preferences, requirements, constraints, reasons, etc) compare it with the relevant Modules. Propose an update for missing or changed knowledge, or a new Module if none covers it.
 
