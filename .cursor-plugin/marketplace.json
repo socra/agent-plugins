@@ -12,7 +12,7 @@
       "name": "cortex",
       "source": "./providers/cursor/cortex",
       "description": "Give Cursor access to your organization's knowledge in Socra Cortex.",
-      "version": "0.3.5",
+      "version": "0.3.6",
       "author": {
         "name": "Socra"
       },

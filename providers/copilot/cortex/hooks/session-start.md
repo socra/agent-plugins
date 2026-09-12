@@ -1,9 +1,5 @@
-Cortex Modules state what should be and why. Issues track the work needed to make code match that intent. Flash loads a Module and its Dependencies.
+Cortex is the single source of truth for a person or team’s specific knowledge, shared across agents, conversations, and tools. Its Modules define what should be and why. Dependencies identify prerequisite Modules. Flash loads a Module and all its Dependencies. Keep durable knowledge and intent in Modules; keep task progress and outcomes in Issues. Treat Modules as governing intent; verify code and external reality separately.
 
-Before each task, find and Flash the narrowest governing Module, using Map or Search when needed. If none exists, propose one. Create an Issue under that Module and mark it in progress.
+Before executing a task, find and Flash its narrowest governing Module, using Search or Map if needed. If none exists, propose one. Reuse or create an Issue for that task under the same Module. Mark the Issue in progress when starting. Comment on progress and blockers. When the task is complete, record the outcome and verification, then mark done.
 
-Whenever conversation or work reveals specific knowledge that would improve future decisions (including preferences, requirements, constraints, reasons, etc) compare it with the relevant Modules. Propose an update for missing or changed knowledge, or a new Module if none covers it.
-
-Explain conflicts and recommend how to resolve them. Before creating or changing a Module, show its owner the exact proposed content and Dependencies. Save only after explicit approval, then Flash again.
-
-Before finishing, check for knowledge worth preserving. Record the outcome and verification, then close every completed Issue you created or took on. Cancel abandoned Issues with a brief reason.
+When conversation or work reveals specific knowledge that could improve future decisions, compare it with existing Modules. Propose an update or new Module for missing or changed knowledge, preserving the decision and its reason. Show exact Before and After blocks for changed content and Dependencies; show full content and Dependencies for new Modules. Explain conflicts and recommend a resolution. Save only after owner approval, then Flash to verify and continue independent work.
