@@ -13,7 +13,7 @@ Cortex turns your team's specific knowledge and work into reusable infrastructur
 - Dependencies compose Modules into a knowledge graph.
 - Flash loads a named Module and its complete dependency closure into your context before you act.
 - Issues coordinate bounded work that reconciles Modules (what should be) with repositories (what is implemented).
-- Inbox shows the unblocked Issues you are responsible for now.
+- Inbox is the pull-based work authorization surface: released Issues you are responsible for now.
 
 Use Cortex when a task depends on team-specific knowledge or decisions, including architecture, constraints, priorities, or work history.
 
@@ -22,6 +22,16 @@ When a task comes from a Cortex Issue, read the Issue and flash its owning Modul
 When creating an Issue, attach it to the narrowest Module that fully governs the work so its Flash provides the most specific knowledge needed to do it.
 
 Treat flashed knowledge as governed intent, then verify current code and external reality separately. When work reveals durable new knowledge that could improve future decisions, find its narrowest Module and propose the exact change/update. Apply no knowledge change without its owner's explicit approval.
+
+## Pull-based work authorization
+
+When asked to work from Cortex or operating under an existing mandate to pull work, use Inbox to choose what to do next. Assignment supplies the demand; Dependencies control when it is released. This lets owners authorize bounded work ahead of time without having to repeat the instruction when its prerequisites finish. Pulling an assigned, ready Issue does not require asking for that same authorization again.
+
+Inbox contains unclosed Issues whose Dependencies are all terminal (`done` or `canceled`) and which are either assigned to the authenticated operator or unassigned in a Module they own. Assigned work is theirs to execute; unassigned work in an owned Module is theirs to triage, take on, or assign. Another operator's work is not theirs to claim merely because it is visible elsewhere.
+
+Read the Issue and Flash its owning Module before starting. An `open` Issue is ready to claim; an `in_progress` Issue is already underway, so resume it only when it is your existing work. Record assignment and `in_progress` status when taking ownership, then work within the Issue's scope and acceptance criteria. Inbox routing does not expand access permissions, authorize unrelated changes, or override explicit approval requirements such as publishing Module changes.
+
+An empty Inbox means no work is currently released to this identity. Do not invent work or begin blocked Issues to fill it. Check Inbox in service of the user's current request or an established work loop; installing Cortex alone does not authorize an autonomous work loop.
 
 ## MCP
 
@@ -36,3 +46,22 @@ Discover Cortex tools through the host's tool search or available-tool list. Hos
 Read tool results for errors before treating an operation as successful. If a write has an uncertain outcome, read the affected record before retrying to avoid duplicates. If authentication or access is denied, report the limitation and continue independent work; do not switch to the CLI to bypass it. If no Cortex connection is available, use an already configured CLI when appropriate or explain that the host's Cortex connection needs setup.
 
 ## CLI
+
+Use `socra cortex` from a shell for repository work, scripting, or operations not exposed by the connected MCP. Run `socra cortex` to discover command groups and `<command> --help` for current arguments and flags. Use the existing authenticated Account; MCP and CLI sessions may represent different identities, so confirm the active identity with `socra account status` when access or Inbox results differ.
+
+Common entry points:
+
+```sh
+socra cortex inbox
+socra cortex issue get <issue-id>
+socra cortex issue timeline <issue-id>
+socra cortex module search --query <keyword>
+socra cortex map
+socra cortex flash <module-name>
+```
+
+For an authorized work pull, read Inbox, inspect the chosen Issue, and Flash its owning Module. Use `socra cortex issue update <issue-id> --assignee <operator> --status in_progress` to record ownership when taking on an open Issue. Search for existing work with `socra cortex issue search --query <keyword>` before filing another Issue. Follow returned pagination cursors when more results are needed; one page is not necessarily the complete Inbox or search result.
+
+Record material progress and verification with `socra cortex comment create --issue <issue-id> --body-file <path>`. Write the resolution comment before using `socra cortex issue update <issue-id> --status done` or `--status canceled`. For approved knowledge changes, use `socra cortex module get <name>`, then `module update <name> --content-file <path>` and Flash to verify. Prefer file inputs for multiline content so shell quoting does not alter it; inspect help before setting Dependencies because those flags replace the complete edge set.
+
+Use `socra cortex inbox watch` only when the task calls for ongoing observation; watching events does not claim work or authorize additional scope. Inspect command output for errors as well as the exit status. For authentication or permission failures, report the blocker rather than switching identities. If the CLI is unavailable, use connected MCP tools where possible.
