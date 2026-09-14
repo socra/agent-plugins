@@ -35,7 +35,7 @@ An empty Inbox means no work is currently released to this identity. Do not inve
 
 ## MCP
 
-Use the connected Cortex MCP for knowledge retrieval and work coordination when its tools are available. It works directly through the host's authenticated connection and does not require a shell or local CLI installation. Prefer it for conversational work; use the CLI when the user requests it or the required operation is unavailable through MCP.
+Use the connected Cortex MCP for knowledge retrieval and work coordination when its tools are available. It works directly through the host's authenticated connection.
 
 Discover Cortex tools through the host's tool search or available-tool list. Hosts may prefix tool names; match the operation and read its current input schema instead of assuming a namespace or argument shape. Load only the tools needed for the current task.
 
@@ -43,25 +43,4 @@ Discover Cortex tools through the host's tool search or available-tool list. Hos
 - **Coordinate work:** Use `issue_get` for a supplied Issue ID, `issue_list` to find related work, or `issue_inbox` when asked what to pick up next. Read `comment_list` for authored progress and `issue_event_list` for state changes when that history matters. Use `issue_create`, `issue_update`, and `comment_create` for authorized work tracking. Record the outcome and verification before marking work done.
 - **Maintain knowledge:** After the owner approves the exact change, use `context_update` for an existing Module or `context_create` for a new subject. Check the schema's replacement semantics, preserve unrelated content and Dependencies, and Flash the saved Module to verify the result.
 
-Read tool results for errors before treating an operation as successful. If a write has an uncertain outcome, read the affected record before retrying to avoid duplicates. If authentication or access is denied, report the limitation and continue independent work; do not switch to the CLI to bypass it. If no Cortex connection is available, use an already configured CLI when appropriate or explain that the host's Cortex connection needs setup.
-
-## CLI
-
-Use `socra cortex` from a shell for repository work, scripting, or operations not exposed by the connected MCP. Run `socra cortex` to discover command groups and `<command> --help` for current arguments and flags. Use the existing authenticated Account; MCP and CLI sessions may represent different identities, so confirm the active identity with `socra account status` when access or Inbox results differ.
-
-Common entry points:
-
-```sh
-socra cortex inbox
-socra cortex issue get <issue-id>
-socra cortex issue timeline <issue-id>
-socra cortex module search --query <keyword>
-socra cortex map
-socra cortex flash <module-name>
-```
-
-For an authorized work pull, read Inbox, inspect the chosen Issue, and Flash its owning Module. Use `socra cortex issue update <issue-id> --assignee <operator> --status in_progress` to record ownership when taking on an open Issue. Search for existing work with `socra cortex issue search --query <keyword>` before filing another Issue. Follow returned pagination cursors when more results are needed; one page is not necessarily the complete Inbox or search result.
-
-Record material progress and verification with `socra cortex comment create --issue <issue-id> --body-file <path>`. Write the resolution comment before using `socra cortex issue update <issue-id> --status done` or `--status canceled`. For approved knowledge changes, use `socra cortex module get <name>`, then `module update <name> --content-file <path>` and Flash to verify. Prefer file inputs for multiline content so shell quoting does not alter it; inspect help before setting Dependencies because those flags replace the complete edge set.
-
-Use `socra cortex inbox watch` only when the task calls for ongoing observation; watching events does not claim work or authorize additional scope. Inspect command output for errors as well as the exit status. For authentication or permission failures, report the blocker rather than switching identities. If the CLI is unavailable, use connected MCP tools where possible.
+Read tool results for errors before treating an operation as successful. If a write has an uncertain outcome, read the affected record before retrying to avoid duplicates. If authentication or access is denied, report the limitation and continue independent work. If no Cortex connection is available, explain that the host's Cortex connection needs setup.
