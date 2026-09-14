@@ -57,3 +57,12 @@ The canonical Cortex session-start context lives at `shared/cortex/session-start
 ```
 
 When changing session-start guidance, bump each affected provider plugin version and its marketplace version (where present) so installed plugin caches receive the update.
+
+The canonical Cortex skill lives at `shared/cortex/skills/cortex/SKILL.md`. Its frontmatter description makes the skill discoverable; its body supplies the workflow when loaded. Codex packages a generated copy at `providers/codex/cortex/skills/cortex/SKILL.md`.
+
+```sh
+./scripts/sync-cortex-skills.sh
+./scripts/sync-cortex-skills.sh --check
+```
+
+Keep the description as a single JSON-quoted YAML string, at most 1024 characters. The script validates that limit and checks for missing or stale provider copies. Add providers to its target list only after validating their skill support. Bump affected plugin versions when changing the skill. CI checks both skill and session-start synchronization.
