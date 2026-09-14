@@ -1,0 +1,16 @@
+{
+  "name": "socra",
+  "owner": {
+    "name": "Socra",
+    "email": "support@socra.com"
+  },
+  "plugins": [
+    {
+      "name": "cortex",
+      "version": "0.1.0",
+      "description": "Use Socra Cortex knowledge and coordinate work in Grok Build.",
+      "source": "./providers/grok/cortex",
+      "category": "productivity"
+    }
+  ]
+}

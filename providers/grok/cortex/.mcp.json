@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "cortex": {
+      "type": "http",
+      "url": "https://cortex.socra.cloud/mcp",
+      "oauth": {
+        "clientId": "client_01m2gvz6jte3fh8qvs4jk0342s",
+        "callbackPort": 49174
+      }
+    }
+  }
+}

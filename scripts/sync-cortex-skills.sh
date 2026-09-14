@@ -10,7 +10,10 @@ repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 source_dir="${repo_root}/shared/cortex/skills/socra-cortex"
 source_file="${source_dir}/SKILL.md"
 # Add providers here only after their skill packaging has been validated.
-targets=("${repo_root}/providers/codex/cortex/skills/socra-cortex")
+targets=(
+  "${repo_root}/providers/codex/cortex/skills/socra-cortex"
+  "${repo_root}/providers/grok/cortex/skills/socra-cortex"
+)
 
 # The shared description uses a JSON-quoted YAML string so Node can validate it
 # without introducing a YAML dependency into this repository.
