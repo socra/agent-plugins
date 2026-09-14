@@ -9,11 +9,11 @@
   },
   "plugins": [
     {
-      "name": "socra-cortex",
+      "name": "cortex",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/socra/agent-plugins.git",
-        "path": "providers/codex/socra-cortex",
+        "path": "providers/codex/cortex",
         "ref": "main"
       },
       "policy": {

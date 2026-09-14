@@ -10,12 +10,12 @@ The repository is currently private. Authenticate GitHub access before installin
 
 ```sh
 codex plugin marketplace add socra/agent-plugins --ref main
-codex plugin add socra-cortex@socra
+codex plugin add cortex@socra
 ```
 
-Plugin path: `providers/codex/socra-cortex`
+Plugin path: `providers/codex/cortex`
 
-Codex receives Cortex guidance through the skill description; this package has no SessionStart hook. After installing `socra-cortex@socra`, remove the previous `cortex@socra` plugin with `codex plugin remove cortex@socra` to avoid duplicate guidance and tools, then start a new task.
+Codex receives Cortex guidance through the `socra-cortex` skill, displayed as Socra Cortex; this package has no SessionStart hook. Start a new task after updating to load the current skill.
 
 ### Claude Code
 
@@ -60,7 +60,7 @@ The canonical Cortex session-start context lives at `shared/cortex/session-start
 
 When changing session-start guidance, bump each affected provider plugin version and its marketplace version (where present) so installed plugin caches receive the update.
 
-The canonical Cortex skill lives at `shared/cortex/skills/cortex/SKILL.md`. Its frontmatter description makes the skill discoverable; its body supplies the workflow when loaded. Codex packages a generated copy at `providers/codex/socra-cortex/skills/cortex/SKILL.md`.
+The canonical Cortex skill lives at `shared/cortex/skills/socra-cortex/SKILL.md`. Its frontmatter description makes the skill discoverable; its body supplies the workflow when loaded. Codex packages a generated copy at `providers/codex/cortex/skills/socra-cortex/SKILL.md`.
 
 ```sh
 ./scripts/sync-cortex-skills.sh
