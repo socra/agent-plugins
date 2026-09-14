@@ -17,21 +17,13 @@ Cortex turns your team's specific knowledge and work into reusable infrastructur
 
 Use Cortex when a task depends on team-specific knowledge or decisions, including architecture, constraints, priorities, or work history.
 
+Inbox provides pull-based work authorization: assignment authorizes bounded work and Dependencies release it when prerequisites finish, so an agent asked to pull work can take a ready, assigned Issue without asking for the same authorization again. Unassigned Issues in Modules you own are yours to triage; work stays within the Issue’s scope, access permissions, and explicit approval requirements.
+
 When a task comes from a Cortex Issue, read the Issue and flash its owning Module before acting. For other tasks, flash the relevant Module directly. If you do not know which Module is relevant, find it with context_map or context_search.
 
 When creating an Issue, attach it to the narrowest Module that fully governs the work so its Flash provides the most specific knowledge needed to do it.
 
 Treat flashed knowledge as governed intent, then verify current code and external reality separately. When work reveals durable new knowledge that could improve future decisions, find its narrowest Module and propose the exact change/update. Apply no knowledge change without its owner's explicit approval.
-
-## Pull-based work authorization
-
-When asked to work from Cortex or operating under an existing mandate to pull work, use Inbox to choose what to do next. Assignment supplies the demand; Dependencies control when it is released. This lets owners authorize bounded work ahead of time without having to repeat the instruction when its prerequisites finish. Pulling an assigned, ready Issue does not require asking for that same authorization again.
-
-Inbox contains unclosed Issues whose Dependencies are all terminal (`done` or `canceled`) and which are either assigned to the authenticated operator or unassigned in a Module they own. Assigned work is theirs to execute; unassigned work in an owned Module is theirs to triage, take on, or assign. Another operator's work is not theirs to claim merely because it is visible elsewhere.
-
-Read the Issue and Flash its owning Module before starting. An `open` Issue is ready to claim; an `in_progress` Issue is already underway, so resume it only when it is your existing work. Record assignment and `in_progress` status when taking ownership, then work within the Issue's scope and acceptance criteria. Inbox routing does not expand access permissions, authorize unrelated changes, or override explicit approval requirements such as publishing Module changes.
-
-An empty Inbox means no work is currently released to this identity. Do not invent work or begin blocked Issues to fill it. Check Inbox in service of the user's current request or an established work loop; installing Cortex alone does not authorize an autonomous work loop.
 
 ## MCP
 
