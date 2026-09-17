@@ -2,7 +2,7 @@
 
 Provider-specific plugins that give coding agents Socra session context and access to Cortex through MCP.
 
-The repository is currently private. Authenticate GitHub access before installing from `socra/agent-plugins`.
+The repository is public. Install Cortex from `socra/agent-plugins` using the supported provider path below.
 
 ## Install Cortex
 
