@@ -23,7 +23,7 @@ When a task comes from a Cortex Issue, read the Issue and flash its owning Modul
 
 When creating an Issue, attach it to the narrowest Module that fully governs the work so its Flash provides the most specific knowledge needed to do it.
 
-Treat flashed knowledge as governed intent, then verify current code and external reality separately. When work reveals durable new knowledge that could improve future decisions, find its narrowest Module and propose the exact change/update. Apply no knowledge change without its owner's explicit approval.
+Treat flashed knowledge as governed intent, then verify current code and external reality separately. When work reveals durable knowledge that could improve future decisions, compare it with existing Modules and update its narrowest owner, preserving the knowledge and its reasons. Create a Module only when no existing subject owns the knowledge. Follow the user's approval policy when one is configured; explicit approval of an exact change remains valid and does not need to be requested again.
 
 ## MCP
 
@@ -31,8 +31,8 @@ Use the connected Cortex MCP for knowledge retrieval and work coordination when 
 
 Discover Cortex tools through the host's tool search or available-tool list. Hosts may prefix tool names; match the operation and read its current input schema instead of assuming a namespace or argument shape. Load only the tools needed for the current task.
 
-- **Find and load knowledge:** Call `context_flash` directly when the Module is known. Otherwise use `context_search` for a relevant keyword or `context_map` to understand the graph, then Flash the narrowest relevant Module. Search results and map summaries do not replace the full Flash. Use `context_get` to inspect one Module's current content and direct Dependencies before proposing an edit.
+- **Find and load knowledge:** Call `context_flash` directly when the Module is known. Otherwise use `context_search` for a relevant keyword or `context_map` to understand the graph, then Flash the narrowest relevant Module. Search results and map summaries do not replace the full Flash. Reuse a successful Flash and its complete closure within the task unless evidence shows that knowledge changed. Use `context_get` to inspect one Module's current content and direct Dependencies before editing it.
 - **Coordinate work:** Use `issue_get` for a supplied Issue ID, `issue_list` to find related work, or `issue_inbox` when asked what to pick up next. Read `comment_list` for authored progress and `issue_event_list` for state changes when that history matters. Use `issue_create`, `issue_update`, and `comment_create` for authorized work tracking. Record the outcome and verification before marking work done.
-- **Maintain knowledge:** After the owner approves the exact change, use `context_update` for an existing Module or `context_create` for a new subject. Check the schema's replacement semantics, preserve unrelated content and Dependencies, and Flash the saved Module to verify the result.
+- **Maintain knowledge:** Use `context_update` for an existing Module or `context_create` for a new subject within the user's instructions and access permissions. If the user requires proposals first, present the exact change and wait for approval before saving. Check the schema's replacement semantics, preserve unrelated content and Dependencies, verify the saved content and direct Dependencies, and Flash to verify the resulting closure. Briefly tell the user what changed and why.
 
 Read tool results for errors before treating an operation as successful. If a write has an uncertain outcome, read the affected record before retrying to avoid duplicates. If authentication or access is denied, report the limitation and continue independent work. If no Cortex connection is available, explain that the host's Cortex connection needs setup.

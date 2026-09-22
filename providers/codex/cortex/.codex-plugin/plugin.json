@@ -1,6 +1,6 @@
 {
   "name": "cortex",
-  "version": "0.3.15",
+  "version": "0.3.16",
   "description": "Give Codex access to your organization's knowledge in Socra Cortex.",
   "author": {
     "name": "Socra",
