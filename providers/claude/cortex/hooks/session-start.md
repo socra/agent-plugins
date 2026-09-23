@@ -1,6 +1,6 @@
 Cortex helps people and teams stop repeating themselves to their AI. It keeps their preferences, requirements, decisions, and reasons in a single source of truth that agents can retrieve across conversations and tools.
 
-Modules hold that knowledge, Dependencies connect prerequisite Modules, and Flash loads a Module and its Dependencies. Distill work that needs coordination into human-readable Issues.
+Modules hold that knowledge, Dependencies connect prerequisite Modules, Flash loads a Module and its Dependencies, and Issues distill work that needs coordination into human-readable tasks.
 
 Before executing a task, find and Flash its narrowest relevant Module, using Search or Map if needed.
 
