@@ -1,8 +1,10 @@
 # Socra agent plugins
 
-Provider-specific plugins that give coding agents Socra session context and access to Cortex through MCP.
+Cortex plugins teach your coding agent to preserve useful knowledge as you work, retrieve it for later tasks, and keep it current. You can start with an empty Account; you do not need to write Modules yourself.
 
-The repository is public. Install Cortex from `socra/agent-plugins` using the supported provider path below.
+Tell your agent whether it should save knowledge as you work or recommend changes and wait for your approval. The agent prepares the knowledge in either case. Your Account permissions and host's tool confirmations still apply.
+
+The repository is public. Install Cortex from `socra/agent-plugins` using the supported provider path below, then [finish setup](#finish-setup).
 
 ## Install Cortex
 
@@ -79,6 +81,14 @@ copilot plugin install cortex@socra
 ```
 
 Plugin path: `providers/copilot/cortex`
+
+## Finish setup
+
+Ask your agent to follow the [coding-agent setup guide](https://workspace.socra.com/docs/cortex/integrations/coding-agents) to finish Account authorization and check the connection. Complete any sign-in or consent that needs you. For Grok Build, use the linked [Grok guide](https://workspace.socra.com/docs/cortex/integrations/grok#connect-grok-build).
+
+Start a new session and use the guide's verification prompt. It checks a real Cortex tool call separately from whether the session received persistent Cortex guidance. An empty Module list is valid; there is no need to create a Module to test the connection.
+
+Then continue your normal work. The agent can preserve useful decisions and corrections as they arise, following your review preference and the access you have given it.
 
 ## Development
 
