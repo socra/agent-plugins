@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "cortex": {
+      "url": "https://cortex.socra.cloud/mcp"
+    }
+  }
+}
