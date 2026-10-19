@@ -101,7 +101,7 @@ The canonical Cortex session-start context lives at `shared/cortex/session-start
 
 When changing session-start guidance, bump each affected provider plugin version and its marketplace version (where present) so installed plugin caches receive the update.
 
-The canonical Cortex skill lives at `shared/cortex/skills/socra-cortex/SKILL.md`. Its frontmatter description makes the skill discoverable; its body supplies the workflow when loaded. Codex and Grok package generated copies under their respective `providers/<provider>/cortex/skills/socra-cortex/` directories.
+The canonical Cortex skill lives at `shared/cortex/skills/socra-cortex/SKILL.md`. Its frontmatter description makes the skill discoverable; its body supplies the workflow when loaded. Codex, Grok, and the curated ChatGPT package include generated copies under their respective `providers/<provider>/cortex/skills/socra-cortex/` directories.
 
 ```sh
 ./scripts/sync-cortex-skills.sh
@@ -109,3 +109,5 @@ The canonical Cortex skill lives at `shared/cortex/skills/socra-cortex/SKILL.md`
 ```
 
 Keep the description as a single JSON-quoted YAML string, at most 1024 characters. The script validates that limit and checks for missing or stale provider copies. Add providers to its target list only after validating their skill support. Bump affected plugin versions when changing the skill. CI checks both skill and session-start synchronization.
+
+The curated package at `providers/chatgpt/cortex` preserves its registered app identity and uses the ChatGPT plugin submission process. The skill synchronization script also updates its manifest descriptions from the canonical skill description. Import tools and their descriptions from the live Cortex service using **Refresh MCP** in the publisher portal; do not package separate tool definitions.

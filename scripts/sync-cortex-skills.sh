@@ -13,11 +13,12 @@ source_file="${source_dir}/SKILL.md"
 targets=(
   "${repo_root}/providers/codex/cortex/skills/socra-cortex"
   "${repo_root}/providers/grok/cortex/skills/socra-cortex"
+  "${repo_root}/providers/chatgpt/cortex/skills/socra-cortex"
 )
 
 # The shared description uses a JSON-quoted YAML string so Node can validate it
 # without introducing a YAML dependency into this repository.
-node - "${source_file}" <<'NODE'
+node - "${source_file}" "${repo_root}/providers/chatgpt/cortex/.codex-plugin/plugin.json" "${1:-}" <<'NODE'
 const fs = require('node:fs');
 const source = fs.readFileSync(process.argv[2], 'utf8');
 const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
@@ -32,6 +33,16 @@ if (!description.trim() || length > 1024) {
   throw new Error(`Skill description must be 1–1024 characters; got ${length}`);
 }
 console.log(`Cortex skill description: ${length}/1024 characters`);
+const manifestPath = process.argv[3];
+const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+if (manifest.description !== description || manifest.interface.longDescription !== description) {
+  if (process.argv[4] === '--check') {
+    throw new Error('Curated Cortex descriptions are out of sync');
+  }
+  manifest.description = description;
+  manifest.interface.longDescription = description;
+  fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+}
 NODE
 
 for target_dir in "${targets[@]}"; do
