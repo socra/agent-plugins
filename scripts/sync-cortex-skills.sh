@@ -20,6 +20,7 @@ targets=(
 # without introducing a YAML dependency into this repository.
 node - "${source_file}" "${repo_root}/providers/chatgpt/cortex/.codex-plugin/plugin.json" "${1:-}" <<'NODE'
 const fs = require('node:fs');
+const path = require('node:path');
 const source = fs.readFileSync(process.argv[2], 'utf8');
 const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
 if (!frontmatter || !/^name: socra-cortex$/m.test(frontmatter[1])) {
@@ -35,6 +36,13 @@ if (!description.trim() || length > 1024) {
 console.log(`Cortex skill description: ${length}/1024 characters`);
 const manifestPath = process.argv[3];
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+for (const field of ['logo', 'composerIcon']) {
+  const assetPath = manifest.interface[field];
+  if (typeof assetPath !== 'string' || !assetPath.startsWith('./') ||
+      !fs.statSync(path.resolve(path.dirname(manifestPath), '..', assetPath)).isFile()) {
+    throw new Error(`Curated Cortex ${field} must reference a packaged image`);
+  }
+}
 if (manifest.description !== description || manifest.interface.longDescription !== description) {
   if (process.argv[4] === '--check') {
     throw new Error('Curated Cortex descriptions are out of sync');
