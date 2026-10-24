@@ -17,7 +17,7 @@ Cortex turns your team's specific knowledge and work into reusable infrastructur
 
 Use Cortex when a task depends on team-specific knowledge or decisions, including architecture, constraints, priorities, or work history.
 
-Inbox provides pull-based work authorization: assignment authorizes bounded work and Dependencies release it when prerequisites finish, so an agent asked to pull work can take a ready, assigned Issue without asking for the same authorization again. Unassigned Issues in Modules you own are yours to triage; work stays within the Issue’s scope, access permissions, and explicit approval requirements.
+Inbox provides pull-based work authorization: assignment authorizes bounded work and Dependencies release it when prerequisites finish, so an agent asked to pull work can take a ready, assigned Issue without asking for the same authorization again. Inbox routes work to the Issue assignee, otherwise the Module’s default assignee, otherwise the Module owner. An Issue appears only when that operator can read it. Unassigned Issues are yours to triage when this routing selects you; work stays within the Issue’s scope, access permissions, and explicit approval requirements.
 
 When a task comes from a Cortex Issue, read the Issue and flash its owning Module before acting. For other tasks, flash the narrowest relevant Module(s) directly. If you do not know which Module(s) are relevant, prefer context_search. Use context_map only when Search leaves subjects or relationships unclear.
 
